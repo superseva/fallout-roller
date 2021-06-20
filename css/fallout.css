@@ -1,0 +1,656 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+/* Global styles */
+.window-app {
+  font-family: "Roboto", sans-serif;
+}
+
+.rollable:hover, .rollable:focus {
+  color: #000;
+  text-shadow: 0 0 10px red;
+  cursor: pointer;
+}
+
+.chat-message {
+  background-image: url(../assets/chat/rec-paper.webp);
+}
+
+.fallout-chat-message .content {
+  padding: 5px;
+}
+
+.fallout-chat-message .content h2 {
+  border: none;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+}
+
+.fallout-chat-message .content .dices-result {
+  margin: 5px 0 0 0;
+  height: 32px;
+}
+
+.fallout-chat-message .content .success-plaq {
+  margin: 0 20px 0 0;
+  font-family: "Lobster", cursive;
+  padding: 10px;
+  font-size: 16px;
+  background-image: url(../assets/chat/green-placq.webp);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.fallout-chat-message .content .complication-plaq {
+  margin: 2px 0 0 10px;
+  font-family: "Lobster", cursive;
+  padding: 14px 10px 10px 10px;
+  font-size: 12px;
+  background-image: url(../assets/chat/red-placq.webp);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.fallout-chat-message .content .damage-plaq {
+  margin: 0 20px 0 0;
+  font-family: "Lobster", cursive;
+  padding: 10px;
+  font-size: 16px;
+  background-image: url(../assets/chat/yellow-placq.webp);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.fallout-chat-message .content .dice-icon {
+  cursor: pointer;
+  position: relative;
+  width: 28px;
+  line-height: 28px;
+  float: left;
+  margin-right: 1px;
+  background-repeat: no-repeat;
+  background-size: 28px 28px;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.fallout-chat-message .content .dice-icon.d20 {
+  background-image: url(../assets/chat/d20-white.svg);
+}
+
+.fallout-chat-message .content .dice-icon.d20.complication {
+  background-image: url(../assets/chat/d20-complication.svg);
+}
+
+.fallout-chat-message .content .dice-icon.d20.success {
+  background-image: url(../assets/chat/d20-success.svg);
+}
+
+.fallout-chat-message .content .dice-icon.d20.crit {
+  background-image: url(../assets/chat/d20-crit.svg);
+}
+
+.fallout-chat-message .content .dice-icon.d20.reroll {
+  color: #1d1d1d;
+}
+
+.fallout-chat-message .content .dice-icon.d6 {
+  width: 32px;
+  line-height: 32px;
+  background-size: 32px 32px;
+  margin: 2px;
+}
+
+.fallout-chat-message .content .dice-icon.d6.face-1 {
+  background-image: url(../assets/chat/d1.webp);
+}
+
+.fallout-chat-message .content .dice-icon.d6.face-2 {
+  background-image: url(../assets/chat/d2.webp);
+}
+
+.fallout-chat-message .content .dice-icon.d6.face-3 {
+  background-image: url(../assets/chat/d3.webp);
+}
+
+.fallout-chat-message .content .dice-icon.d6.face-4 {
+  background-image: url(../assets/chat/d4.webp);
+}
+
+.fallout-chat-message .content .dice-icon.d6.face-5 {
+  background-image: url(../assets/chat/d5.webp);
+}
+
+.fallout-chat-message .content .dice-icon.d6.face-6 {
+  background-image: url(../assets/chat/d6.webp);
+}
+
+.fallout-chat-message .content .dice-icon.dice-selected {
+  opacity: 0.45;
+}
+
+.fallout-dialog .resource {
+  margin: 0 2px 5px;
+  padding: 0 5px 0 0;
+  background-color: #729eb2;
+}
+
+.fallout-dialog .resource.tile {
+  background-color: #6ea898;
+}
+
+.fallout-dialog .resource.green {
+  background-color: #b4bb5b;
+}
+
+.fallout-dialog .resource.red {
+  background-color: #e37e6c;
+}
+
+.fallout-dialog .resource .title-label {
+  padding: 5px;
+  font-family: "Lobster", cursive;
+  color: white;
+}
+
+.fallout-dialog .resource input[type=number] {
+  text-align: center;
+  background-color: beige;
+}
+
+.fallout-dialog ul {
+  list-style: none;
+  padding: 5px 20px;
+  margin: 0 2px 5px;
+  background-color: #c8d0d4;
+}
+
+.fallout-dialog ul li {
+  text-decoration: none;
+  text-align: center;
+}
+
+.fallout-dialog ul li .dice-icon {
+  cursor: pointer;
+  width: 32px;
+  line-height: 32px;
+  display: inline-block;
+  margin-right: 1px;
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  background-image: url(../assets/chat/d20-white.svg);
+}
+
+.fallout-dialog ul li .dice-icon.marked {
+  color: white;
+  background-image: url(../assets/chat/d20-blue.svg);
+}
+
+.grid,
+.grid-2col {
+  display: grid;
+  grid-column: span 2 / span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.grid-3col {
+  grid-column: span 3 / span 3;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4col {
+  grid-column: span 4 / span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-5col {
+  grid-column: span 5 / span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-6col {
+  grid-column: span 6 / span 6;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-7col {
+  grid-column: span 7 / span 7;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-8col {
+  grid-column: span 8 / span 8;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-9col {
+  grid-column: span 9 / span 9;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-10col {
+  grid-column: span 10 / span 10;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-11col {
+  grid-column: span 11 / span 11;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid-12col {
+  grid-column: span 12 / span 12;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-start-2 {
+  grid-column-start: 2;
+}
+
+.grid-start-3 {
+  grid-column-start: 3;
+}
+
+.grid-start-4 {
+  grid-column-start: 4;
+}
+
+.grid-start-5 {
+  grid-column-start: 5;
+}
+
+.grid-start-6 {
+  grid-column-start: 6;
+}
+
+.grid-start-7 {
+  grid-column-start: 7;
+}
+
+.grid-start-8 {
+  grid-column-start: 8;
+}
+
+.grid-start-9 {
+  grid-column-start: 9;
+}
+
+.grid-start-10 {
+  grid-column-start: 10;
+}
+
+.grid-start-11 {
+  grid-column-start: 11;
+}
+
+.grid-start-12 {
+  grid-column-start: 12;
+}
+
+.grid-span-2 {
+  grid-column-end: span 2;
+}
+
+.grid-span-3 {
+  grid-column-end: span 3;
+}
+
+.grid-span-4 {
+  grid-column-end: span 4;
+}
+
+.grid-span-5 {
+  grid-column-end: span 5;
+}
+
+.grid-span-6 {
+  grid-column-end: span 6;
+}
+
+.grid-span-7 {
+  grid-column-end: span 7;
+}
+
+.grid-span-8 {
+  grid-column-end: span 8;
+}
+
+.grid-span-9 {
+  grid-column-end: span 9;
+}
+
+.grid-span-10 {
+  grid-column-end: span 10;
+}
+
+.grid-span-11 {
+  grid-column-end: span 11;
+}
+
+.grid-span-12 {
+  grid-column-end: span 12;
+}
+
+.flex-group-center,
+.flex-group-left,
+.flex-group-right {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.flex-group-left {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.flex-group-right {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.flexshrink {
+  -webkit-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+}
+
+.flex-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.flexlarge {
+  -webkit-box-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.align-left {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.align-right {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.align-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Styles limited to fallout sheets */
+.fallout {
+  /* ----------------------------------------- */
+  /*  Items Lists                              */
+  /* ----------------------------------------- */
+  /* Example style for FalloutItem (can be removed if not needed) */
+}
+
+.fallout .item-form {
+  font-family: "Roboto", sans-serif;
+}
+
+.fallout .sheet-header {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 auto;
+  flex: 0 auto;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.fallout .sheet-header .profile-img {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100px;
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.fallout .sheet-header .header-fields {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.fallout .sheet-header h1.charname {
+  height: 50px;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+}
+
+.fallout .sheet-header h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.fallout .sheet-tabs {
+  -webkit-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+}
+
+.fallout .sheet-body,
+.fallout .sheet-body .tab,
+.fallout .sheet-body .tab .editor {
+  height: 100%;
+}
+
+.fallout .tox .tox-editor-container {
+  background: #fff;
+}
+
+.fallout .tox .tox-edit-area {
+  padding: 0 8px;
+}
+
+.fallout .resource-label {
+  font-weight: bold;
+}
+
+.fallout .items-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove #eeede0;
+  font-weight: bold;
+}
+
+.fallout .items-header > * {
+  font-size: 14px;
+  text-align: center;
+}
+
+.fallout .items-header .item-name {
+  font-weight: bold;
+  padding-left: 5px;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.fallout .items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: #444;
+}
+
+.fallout .items-list .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fallout .items-list .item-name {
+  -webkit-box-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 13px;
+  text-align: left;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.fallout .items-list .item-name h3, .fallout .items-list .item-name h4 {
+  margin: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.fallout .items-list .item-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100px;
+  flex: 0 0 100px;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.fallout .items-list .item-controls a {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 6px;
+}
+
+.fallout .items-list .item {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 2px;
+  border-bottom: 1px solid #c9c7b8;
+}
+
+.fallout .items-list .item:last-child {
+  border-bottom: none;
+}
+
+.fallout .items-list .item .item-name {
+  color: #191813;
+}
+
+.fallout .items-list .item .item-name .item-image {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 30px;
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+
+.fallout .items-list .item-prop {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+
+.fallout .items-list .items-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove #eeede0;
+  font-weight: bold;
+}
+
+.fallout .items-list .items-header > * {
+  font-size: 12px;
+  text-align: center;
+}
+
+.fallout .items-list .items-header .item-name {
+  padding-left: 5px;
+  text-align: left;
+}
+
+.fallout .items-list .item-skill-value, .fallout .items-list .item-skill-tag {
+  -webkit-box-flex: 0.5;
+  -ms-flex: 0.5;
+  flex: 0.5;
+  text-align: center;
+}
+
+.fallout .items-list .item-skill-value input[type=number], .fallout .items-list .item-skill-tag input[type=number] {
+  max-width: 2rem;
+}
+
+.fallout .item-formula {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 200px;
+  flex: 0 0 200px;
+  padding: 0 8px;
+}
+
+.fallout .effects .item .effect-source,
+.fallout .effects .item .effect-duration,
+.fallout .effects .item .effect-controls {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+
+.fallout .effects .item .effect-controls {
+  border: none;
+}
