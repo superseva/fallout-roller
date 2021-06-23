@@ -89,7 +89,7 @@ export class Roller2D20 {
             results: dicesRolled,
             successTreshold: successTreshold
         }
-        const html = await renderTemplate("systems/fallout/templates/chat/roll2d20.html", rollData);
+        const html = await renderTemplate("modules/fallout-roller/templates/chat/roll2d20.html", rollData);
         let falloutRoll = {}
         falloutRoll.rollname = rollname;
         falloutRoll.dicesRolled = dicesRolled;
@@ -198,7 +198,7 @@ export class Roller2D20 {
             effects: effects,
             results: dicesRolled
         }
-        const html = await renderTemplate("systems/fallout/templates/chat/rollD6.html", rollData);
+        const html = await renderTemplate("modules/fallout-roller/templates/chat/rollD6.html", rollData);
         let falloutRoll = {}
         falloutRoll.rollname = rollname;
         falloutRoll.dicesRolled = dicesRolled;

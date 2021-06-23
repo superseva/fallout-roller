@@ -45,7 +45,7 @@ export class Dialog2d20 extends Dialog {
         dialogData.skill = skill;
         dialogData.tag = tag;
         dialogData.complication = complication;
-        const html = await renderTemplate("systems/fallout/templates/dialogs/dialog2d20.html", dialogData);
+        const html = await renderTemplate("modules/fallout-roller/templates/dialogs/dialog2d20.html", dialogData);
         let d = new Dialog2d20(rollName, diceNum, attribute, skill, tag, complication, {
             title: rollName,
             content: html,
