@@ -2,7 +2,7 @@
     "name": "fallout-roller",
     "title": "Fallout 2D20 Roller",
     "description": "Fallout 2D20 Roller adds the ability to roll D20 and D6 dice with the option to re-roll. It also supports Dice So Nice module ",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "minimumCoreVersion" : "0.8.7",
     "compatibleCoreVersion" : "0.8.7",
     "author": "HappySteve",    
